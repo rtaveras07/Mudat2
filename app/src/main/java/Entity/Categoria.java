@@ -5,4 +5,8 @@ package Entity;
  */
 
 public class Categoria {
+    Integer idCategoria;
+    Integer descripcion;
+    Integer nombre;
+
 }

@@ -5,4 +5,5 @@ package Entity;
  */
 
 public class Fotos {
+
 }

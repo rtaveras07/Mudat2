@@ -5,4 +5,14 @@ package Entity;
  */
 
 public class Usuario {
+    Integer idUsuario;
+    String nombre;
+    String tipoUsuario;
+    Integer idEntifiacacion;
+    String email;
+    String telefono;
+    String clave;
+    Boolean estatus;
+
+
 }
