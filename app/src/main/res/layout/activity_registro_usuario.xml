@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.itla.mudat.RegistroUsuario">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical" >
+
+
+         <TextView
+             android:id="@+id/textView8"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Nombres" />
+
+         <EditText
+             android:id="@+id/txtNombres"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:inputType="textPersonName"
+             android:text="" />
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Tipo Usuario" />
+
+         <EditText
+             android:id="@+id/txtTipoUsuario"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:inputType="textPersonName"
+             android:text="" />
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Identificacion" />
+
+         <EditText
+             android:id="@+id/txtidentificacion"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:inputType="textPersonName"
+             android:text="" />
+
+         <TextView
+             android:id="@+id/textView"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Email" />
+
+         <EditText
+             android:id="@+id/txtemail"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:inputType="textPersonName"
+             android:text="" />
+
+         <TextView
+             android:id="@+id/textView2"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Telefono" />
+
+         <EditText
+             android:id="@+id/txtTelefono"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:inputType="textPersonName"
+             android:text="" />
+
+         <TextView
+             android:id="@+id/textView3"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Clave" />
+
+         <EditText
+             android:id="@+id/txtClave"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:inputType="textPersonName"
+             android:text="" />
+
+         <LinearLayout
+             android:orientation="horizontal"
+             android:gravity="center"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+
+             <Button
+                 android:id="@+id/bntAceptar"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Aceptar"
+                 android:onClick="Aceptar"/>
+                 />
+
+             <Button
+                 android:id="@+id/bntCancelar"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Cancelar"
+                />
+
+         </LinearLayout>
+     </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

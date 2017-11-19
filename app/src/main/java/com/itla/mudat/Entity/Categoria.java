@@ -1,4 +1,4 @@
-package Entity;
+package com.itla.mudat.Entity;
 
 /**
  * Created by Owner on 11/18/2017.
@@ -6,7 +6,7 @@ package Entity;
 
 public class Categoria {
     Integer idCategoria;
-    Integer descripcion;
-    Integer nombre;
+    String nombre;
+
 
 }

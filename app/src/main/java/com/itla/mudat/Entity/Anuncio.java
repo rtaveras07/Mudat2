@@ -1,4 +1,6 @@
-package Entity;
+package com.itla.mudat.Entity;
+
+import java.util.Date;
 
 /**
  * Created by Owner on 11/18/2017.
@@ -6,9 +8,9 @@ package Entity;
 
 public class Anuncio {
    Integer idAnuncio;
-    Integer categoria;
-    Integer idUsuario;
-    String fecha;
+    Categoria categoria;
+    Usuario idUsuario;
+    Date fecha;
     String condicion;
     Double precio;
     String titulo;
