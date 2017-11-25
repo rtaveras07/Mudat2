@@ -14,7 +14,7 @@ public class Usuario {
     String email;
     String telefono;
     String clave;
-    Integer estatus;
+    Boolean estatus;
 
     public Integer getIdUsuario() {
         return idUsuario;
@@ -72,11 +72,11 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public Integer getEstatus() {
+    public Boolean getEstatus() {
         return estatus;
     }
 
-    public void setEstatus(Integer estatus) {
+    public void setEstatus(Boolean estatus) {
         this.estatus = estatus;
     }
 }
