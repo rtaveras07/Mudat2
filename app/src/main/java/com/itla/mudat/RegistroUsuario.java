@@ -4,11 +4,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import com.itla.mudat.Entity.TipodeUsuario;
 import com.itla.mudat.Entity.Usuario;
+import com.itla.mudat.dao.usuarioDbo;
+
+import static com.itla.mudat.dao.DbConection.LOG_T;
 
 public class RegistroUsuario extends AppCompatActivity {
 
@@ -25,22 +29,20 @@ public class RegistroUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
 
-
-
-
     }
 
-
     public void Aceptar(View view) {
+
+
         //opteniendo los objetos campos
         nombre = (EditText) findViewById(R.id.txtNombres);
         tipoUsuario = (EditText) findViewById(R.id.txtTipoUsuario);
-        identificacion=(EditText) findViewById(R.id.txtidentificacion);
-        email=(EditText) findViewById(R.id.txtemail);
-        telefono=(EditText) findViewById(R.id.txtTelefono);
-        clave=(EditText) findViewById(R.id.txtClave);
+        identificacion = (EditText) findViewById(R.id.txtidentificacion);
+        email = (EditText) findViewById(R.id.txtemail);
+        telefono = (EditText) findViewById(R.id.txtTelefono);
+        clave = (EditText) findViewById(R.id.txtClave);
         //instanciando la clase usuario
-        Usuario usuario=new Usuario();
+        Usuario usuario = new Usuario();
         //asignando los campos a las variables
         usuario.setNombre(nombre.getText().toString());
         //tipo de usuario cliente
@@ -49,13 +51,13 @@ public class RegistroUsuario extends AppCompatActivity {
         usuario.setClave(clave.getText().toString());
         usuario.setTelefono(telefono.getText().toString());
         usuario.setEmail(email.getText().toString());
+        usuario.setTipoUsuario(TipodeUsuario.CLIENTE);
+        Log.i(LOG_T,"Registrando usuario:" +usuario.toString());
+        usuarioDbo db = new usuarioDbo(this);
+        db.crear(usuario);
 
 
     }
-
-
-
-
 
 
 }

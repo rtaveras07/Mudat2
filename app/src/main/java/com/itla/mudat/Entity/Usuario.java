@@ -9,7 +9,7 @@ public class Usuario {
 
     Integer idUsuario;
     String nombre;
-    Usuario tipoUsuario;
+    TipodeUsuario tipoUsuario;
     Integer idIdentificacion;
     String email;
     String telefono;
@@ -32,13 +32,14 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public Usuario getTipoUsuario() {
+    public TipodeUsuario getTipoUsuario() {
         return tipoUsuario;
     }
 
     public void setTipoUsuario(TipodeUsuario tipou ) {
-        this.tipoUsuario = tipoUsuario;
+        this.tipoUsuario = tipou;
     }
+
 
     public Integer getIdIdentificacion() {
         return idIdentificacion;
@@ -79,4 +80,6 @@ public class Usuario {
     public void setEstatus(Boolean estatus) {
         this.estatus = estatus;
     }
+
+
 }
