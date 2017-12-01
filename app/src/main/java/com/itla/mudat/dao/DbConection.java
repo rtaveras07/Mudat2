@@ -18,17 +18,21 @@ public class DbConection extends SQLiteOpenHelper{
     public static String LOG_T="DbConnetion";
 
     public DbConection(Context context) {
-        super(context, DATABASE_NAME,  null,  1);
+        super(context, DATABASE_NAME,  null,  2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.i(LOG_T, "Iniciando onCreate");
         db.execSQL(SQLiteHelperSchema.USUARIO_TABLE);
+        db.execSQL(SQLiteHelperSchema.CATEGORIA_TABLE);
+      db.execSQL(SQLiteHelperSchema.ANUNCIO_TABLE);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
 
     }
 }

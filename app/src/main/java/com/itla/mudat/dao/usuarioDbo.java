@@ -28,6 +28,7 @@ public class usuarioDbo {
 
         SQLiteDatabase db = connetion.getWritableDatabase();
         ContentValues cv = new ContentValues();
+
         cv.put("nombre", usuario.getNombre());
         cv.put("identificacion", usuario.getIdIdentificacion());
         cv.put("telefono", usuario.getTelefono());

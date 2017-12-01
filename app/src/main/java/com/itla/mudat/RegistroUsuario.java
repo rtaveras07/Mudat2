@@ -52,12 +52,15 @@ public class RegistroUsuario extends AppCompatActivity {
         usuario.setTelefono(telefono.getText().toString());
         usuario.setEmail(email.getText().toString());
         usuario.setTipoUsuario(TipodeUsuario.CLIENTE);
-        Log.i(LOG_T,"Registrando usuario:" +usuario.toString());
+        Log.i(LOG_T, "Registrando usuario:" + usuario.toString());
         usuarioDbo db = new usuarioDbo(this);
         db.crear(usuario);
 
 
     }
+
+
+
 
 
 }

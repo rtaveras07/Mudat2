@@ -19,4 +19,15 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, RegistroUsuario.class );
         startActivity(i);
     }
+    public void categoria(View view) {
+        Intent i = new Intent(this, RegistroCategoria.class );
+        startActivity(i);
+    }
+
+    public void regAnuncio(View view) {
+        Intent i = new Intent(this, RegistroAnuncio.class );
+        startActivity(i);
+    }
+
+
 }
