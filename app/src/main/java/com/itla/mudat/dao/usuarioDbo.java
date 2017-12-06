@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.itla.mudat.Entity.TipodeUsuario;
 import com.itla.mudat.Entity.Usuario;
@@ -41,6 +42,24 @@ public class usuarioDbo {
 
     }
 
+
+    public void editar(Usuario usuario) {
+
+        SQLiteDatabase db = connetion.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("nombre", usuario.getNombre());
+        cv.put("identificacion", usuario.getIdIdentificacion());
+        cv.put("telefono", usuario.getTelefono());
+        cv.put("clave", usuario.getClave());
+        cv.put("email", usuario.getEmail());
+        cv.put("tipousuario",  usuario.getTipoUsuario().toString());
+        cv.put("estatus", usuario.getEstatus());
+        db.update("usuario", cv,"id="+ usuario.getIdUsuario(),null);
+        db.close();
+
+    }
+
     public List<Usuario> buscar() {
         List<Usuario> usuarios = new ArrayList<>();
         SQLiteDatabase db = connetion.getWritableDatabase();
@@ -49,7 +68,7 @@ public class usuarioDbo {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             Usuario u = new Usuario();
-            u.setIdUsuario(cursor.getInt(cursor.getColumnIndex("idUsuario")));
+            u.setIdUsuario(cursor.getInt(cursor.getColumnIndex("id")));
             u.setNombre(cursor.getString(cursor.getColumnIndex("nombre")));
             u.setIdIdentificacion(cursor.getInt(cursor.getColumnIndex("identificacion")));
             u.setTelefono(cursor.getString(cursor.getColumnIndex("telefono")));
@@ -59,6 +78,9 @@ public class usuarioDbo {
             u.setEstatus(Boolean.valueOf(cursor.getString(cursor.getColumnIndex("estatus"))));
             cursor.moveToNext();
             usuarios.add(u);
+
+
+          // Log.i("Mudat: ", String.valueOf(u.getIdIdentificacion()));
 
 
         }

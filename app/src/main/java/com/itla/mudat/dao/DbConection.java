@@ -14,11 +14,11 @@ public class DbConection extends SQLiteOpenHelper{
     public DbConection(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
-     public static String DATABASE_NAME="mudate.db";
+     public static String DATABASE_NAME="mudate3.db";
     public static String LOG_T="DbConnetion";
 
     public DbConection(Context context) {
-        super(context, DATABASE_NAME,  null,  2);
+        super(context, DATABASE_NAME,  null,  1);
     }
 
     @Override

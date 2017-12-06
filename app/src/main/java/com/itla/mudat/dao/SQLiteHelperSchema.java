@@ -30,9 +30,15 @@ public class SQLiteHelperSchema {
             ");";
 
 
-    public static final String ANUNCIO_TABLE="CREATE TABLE `categoria` (\n" +
-            "\t`id`\tINTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,\n" +
-            "\t`nombre`\tTEXT\n" +
+    public static final String ANUNCIO_TABLE="CREATE TABLE `anuncio` (\n" +
+            "\t`id`\tINTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+            "\t`fecha`\tTEXT,\n" +
+            "\t`condicion`\tTEXT,\n" +
+            "\t`precio`\tREAL,\n" +
+            "\t`titulo`\tTEXT,\n" +
+            "\t`ubicacion`\tTEXT,\n" +
+            "\t`detalle`\tTEXT,\n" +
+            "\t`idusuario`\tINTEGER\n" +
             ");";
 
 

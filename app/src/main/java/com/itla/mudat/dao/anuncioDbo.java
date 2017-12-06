@@ -27,15 +27,24 @@ public class anuncioDbo {
 
         SQLiteDatabase db = connetion.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("idAnuncio",an.getIdAnuncio());
-        cv.put("categoria",an.getCategoria().toString());
-        cv.put("idUsuario",an.getIdUsuario().toString());
-        cv.put("fecha",an.getFecha().toString());
-        cv.put("condicion",an.getCondicion().toString());
-        cv.put("precio",an.getPrecio().toString());
-        cv.put("titulo",an.getTitulo().toString());
-        cv.put("ubicacion",an.getUbicacion().toString());
-        cv.put("detalle",an.getDetalle().toString());
+
+ /* EditText fecha;
+    EditText condicion;
+    EditText precio;
+    EditText titulo;
+    EditText ubicacion;
+    EditText detalle;
+    EditText idusuario;
+    Anuncio anuncio;*/
+
+        cv.put("fecha", an.getFecha().toString());
+        cv.put("condicion", an.getCondicion().toString());
+        cv.put("precio", an.getPrecio().toString());
+        cv.put("titulo", an.getTitulo().toString());
+        cv.put("ubicacion", an.getUbicacion().toString());
+        cv.put("detalle", an.getDetalle().toString());
+        cv.put("idusuario", an.getIdusuario().toString());
+
         db.insert("anuncio", null, cv);
         db.close();
 
@@ -44,21 +53,20 @@ public class anuncioDbo {
     public List<Anuncio> buscar() {
         List<Anuncio> anu = new ArrayList<>();
         SQLiteDatabase db = connetion.getWritableDatabase();
-        String columnas[] = new String[]{"id","idUsuario","fecha","titulo","ubicacion","detalle"};
+        String columnas[] = new String[]{"id", "fecha", "condicion", "precio", "titulo", "ubicacion", "detalle", "idUsuario"};
         Cursor cursor = db.query("anuncio", columnas, null, null, null, null, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             Anuncio a = new Anuncio();
 
-            /*a.setCategoria(cursor.getString(cursor.getColumnIndex("categoria")));
-            a.setCategoria(cursor.getString(cursor.getColumnIndex("idUsuario")));
-            a.setCategoria(cursor.getString(cursor.getColumnIndex("fecha")));
-            a.setCategoria(cursor.getString(cursor.getColumnIndex("titulo")));
+            a.setFecha(cursor.getString(cursor.getColumnIndex("fecha")));
+            a.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
+            a.setPrecio(cursor.getDouble(cursor.getColumnIndex("precio")));
+            a.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
+            a.setUbicacion(cursor.getString(cursor.getColumnIndex("ubicacion")));
+            a.setDetalle(cursor.getString(cursor.getColumnIndex("detalle")));
+            a.setIdusuario(cursor.getString(cursor.getColumnIndex("idUsuario")));
 
-            a.setCategoria(cursor.getString(cursor.getColumnIndex("ubicacion")));
-            a.setCategoria(cursor.getString(cursor.getColumnIndex("detalle")));
-
-*/
 
             cursor.moveToNext();
             anu.add(a);

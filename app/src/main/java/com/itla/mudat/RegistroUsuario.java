@@ -19,48 +19,70 @@ public class RegistroUsuario extends AppCompatActivity {
 
     EditText nombre;
     EditText tipoUsuario;
-    EditText identificacion;
+    EditText  idIdentificacion;
     EditText email;
     EditText telefono;
     EditText clave;
+
+    Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
 
+        //opteniendo los objetos campos
+        nombre = (EditText) findViewById(R.id.txtNombres);
+        tipoUsuario = (EditText) findViewById(R.id.txtTipoUsuario);
+        idIdentificacion =  findViewById(R.id.txtidentificacion);
+        email = (EditText) findViewById(R.id.txtemail);
+        telefono = (EditText) findViewById(R.id.txtTelefono);
+        clave = (EditText) findViewById(R.id.txtClave);
+
+        usuarioDbo u = new usuarioDbo(this);
+        u.buscar();
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            usuario = (Usuario) bundle.getSerializable("param");
+            nombre.setText(usuario.getNombre());
+            tipoUsuario.setText(usuario.getTipoUsuario().toString());
+            idIdentificacion.setText(idIdentificacion.getText().toString());
+            email.setText(usuario.getEmail());
+            telefono.setText(usuario.getTelefono());
+            clave.setText(usuario.getClave());
+
+        }
+
+
     }
 
     public void Aceptar(View view) {
 
 
-        //opteniendo los objetos campos
-        nombre = (EditText) findViewById(R.id.txtNombres);
-        tipoUsuario = (EditText) findViewById(R.id.txtTipoUsuario);
-        identificacion = (EditText) findViewById(R.id.txtidentificacion);
-        email = (EditText) findViewById(R.id.txtemail);
-        telefono = (EditText) findViewById(R.id.txtTelefono);
-        clave = (EditText) findViewById(R.id.txtClave);
         //instanciando la clase usuario
-        Usuario usuario = new Usuario();
+        usuario = new Usuario();
         //asignando los campos a las variables
         usuario.setNombre(nombre.getText().toString());
         //tipo de usuario cliente
         usuario.setTipoUsuario(TipodeUsuario.CLIENTE);
-        usuario.setIdIdentificacion(Integer.parseInt(identificacion.getText().toString()));
+       usuario.setIdIdentificacion(Integer.parseInt(idIdentificacion.getText().toString()));
         usuario.setClave(clave.getText().toString());
         usuario.setTelefono(telefono.getText().toString());
         usuario.setEmail(email.getText().toString());
         usuario.setTipoUsuario(TipodeUsuario.CLIENTE);
-        Log.i(LOG_T, "Registrando usuario:" + usuario.toString());
+       // Log.i(LOG_T, "Registrando usuario:" + usuario.toString());
         usuarioDbo db = new usuarioDbo(this);
-        db.crear(usuario);
 
+
+         if(null == usuario.getIdUsuario()){
+             db.crear(usuario);
+         }
+         else {
+             db.editar(usuario);
+         }
 
     }
-
-
-
 
 
 }

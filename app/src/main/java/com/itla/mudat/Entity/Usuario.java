@@ -1,11 +1,29 @@
 package com.itla.mudat.Entity;
 
+import android.text.Editable;
+
+import java.io.Serializable;
+
 /**
  * Created by Owner on 11/18/2017.
  */
 
-public class Usuario {
+public class Usuario implements Serializable {
 
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "idUsuario=" + idUsuario +
+                ", nombre='" + nombre + '\'' +
+                ", tipoUsuario=" + tipoUsuario +
+                ", idIdentificacion=" + idIdentificacion +
+                ", email='" + email + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", clave='" + clave + '\'' +
+                ", estatus=" + estatus +
+                '}';
+    }
 
     Integer idUsuario;
     String nombre;
@@ -45,7 +63,7 @@ public class Usuario {
         return idIdentificacion;
     }
 
-    public void setIdIdentificacion(  Integer id ) {
+    public void setIdIdentificacion(int id ) {
         this.idIdentificacion = idIdentificacion;
     }
 
@@ -80,6 +98,7 @@ public class Usuario {
     public void setEstatus(Boolean estatus) {
         this.estatus = estatus;
     }
+
 
 
 }

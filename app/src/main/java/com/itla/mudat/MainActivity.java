@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void lanzar(View view) {
-        Intent i = new Intent(this, RegistroUsuario.class );
+        Intent i = new Intent(this, ConsultaUsuariosActivity.class );
         startActivity(i);
     }
     public void categoria(View view) {
@@ -24,10 +24,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void regAnuncio(View view) {
-        Intent i = new Intent(this, RegistroAnuncio.class );
+
+    public void consultaAnuncio(View view) {
+        Intent i = new Intent(this, ConsultaAnuncioActivity.class );
         startActivity(i);
     }
-
-
 }

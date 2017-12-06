@@ -1,5 +1,7 @@
 package com.itla.mudat.Entity;
 
+import android.widget.EditText;
+
 import java.util.Date;
 
 /**
@@ -7,48 +9,29 @@ import java.util.Date;
  */
 
 public class Anuncio {
-   Integer idAnuncio;
+ Integer id;
+ String fecha;
+ String condicion;
+ Double precio;
+ String titulo;
+ String ubicacion;
+ String detalle;
+ String idusuario;
 
-    Categoria categoria;
-    Usuario idUsuario;
-    Date fecha;
-    String condicion;
-    Double precio;
-    String titulo;
-    String ubicacion;
-    String detalle;
 
- public Integer getIdAnuncio() {
-  return idAnuncio;
+ public Integer getId() {
+  return id;
  }
 
- public void setIdAnuncio(Integer idAnuncio) {
-  this.idAnuncio = idAnuncio;
+ public void setId(Integer id) {
+  this.id = id;
  }
 
- public Categoria getCategoria() {
-  return categoria;
- }
-
- public void setCategoria(Categoria categoria) {
-  this.categoria = categoria;
- }
-
- public Usuario getIdUsuario() {
-  return idUsuario;
- }
-
- public void setIdUsuario(Usuario idUsuario) {
-  this.idUsuario = idUsuario;
- }
-
-
-
- public Date getFecha() {
+ public String getFecha() {
   return fecha;
  }
 
- public void setFecha(Date fecha) {
+ public void setFecha(String fecha) {
   this.fecha = fecha;
  }
 
@@ -90,5 +73,13 @@ public class Anuncio {
 
  public void setDetalle(String detalle) {
   this.detalle = detalle;
+ }
+
+ public String getIdusuario() {
+  return idusuario;
+ }
+
+ public void setIdusuario(String idusuario) {
+  this.idusuario = idusuario;
  }
 }

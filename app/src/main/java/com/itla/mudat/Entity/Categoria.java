@@ -26,7 +26,13 @@ public class Categoria {
         this.nombre = nombre;
     }
 
-
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "idCategoria=" + idCategoria +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }
 
 
