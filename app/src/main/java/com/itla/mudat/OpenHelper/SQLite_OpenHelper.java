@@ -30,7 +30,28 @@ public class SQLite_OpenHelper extends SQLiteOpenHelper {
                 "\t`estatus`\tINTEGER\n" +
                 ");";
 
+        String anuncio ="CREATE TABLE `anuncio` (\n" +
+                "\t`id`\tINTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                "\t`idcategoria`\tTEXT,\n" +
+                "\t`fecha`\tTEXT,\n" +
+                "\t`condicion`\tTEXT,\n" +
+                "\t`precio`\tREAL,\n" +
+                "\t`titulo`\tTEXT,\n" +
+                "\t`ubicacion`\tTEXT,\n" +
+                "\t`detalle`\tTEXT,\n" +
+                "\t`idusuario`\tINTEGER\n" +
+                ");";
+
+        String cat=
+
+
+
+
     }
+
+
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -62,6 +83,10 @@ public class SQLite_OpenHelper extends SQLiteOpenHelper {
 
 this.getWritableDatabase().insert("usuario",null,valores);
     }
+
+
+
+
 
 
 }
