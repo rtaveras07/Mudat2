@@ -42,7 +42,11 @@ public class SQLite_OpenHelper extends SQLiteOpenHelper {
                 "\t`idusuario`\tINTEGER\n" +
                 ");";
 
-        String cat=
+        String categoria="CREATE TABLE `categoria` (\n" +
+                "\t`id`\tINTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,\n" +
+                "\t`nombre`\tTEXT\n" +
+                ");";
+
 
 
 
@@ -71,7 +75,7 @@ public class SQLite_OpenHelper extends SQLiteOpenHelper {
     }
 
     //metodo insertar registros en la tabla usuarios
-    public void insertarRegistros(String nom, String ident, String tel, String cla, String correo, String tipo, Integer status) {
+    /*public void insertarRegistros(String nom, String ident, String tel, String cla, String correo, String tipo, Integer status) {
         ContentValues valores = new ContentValues();
         valores.put("nombre", nom);
         valores.put("identificacion", ident);
@@ -84,7 +88,7 @@ public class SQLite_OpenHelper extends SQLiteOpenHelper {
 this.getWritableDatabase().insert("usuario",null,valores);
     }
 
-
+*/
 
 
 

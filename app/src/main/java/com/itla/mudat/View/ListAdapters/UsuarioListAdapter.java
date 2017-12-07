@@ -22,7 +22,7 @@ private Activity context;
 
     public UsuarioListAdapter(List<Usuario> usuarios, Activity context) {
         this.usuarios = usuarios;
-        this.context = context;
+        this.context = context;//campos que se desplegaran en la consulta.
     }
 
     @Override

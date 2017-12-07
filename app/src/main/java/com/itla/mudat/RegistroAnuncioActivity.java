@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.itla.mudat.Entity.Anuncio;
 import com.itla.mudat.Entity.Usuario;
@@ -42,7 +43,7 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
         idusuario = (EditText) findViewById(R.id.txtIdUsuario);
 
         anuncioDbo a = new anuncioDbo(this);
-        a.buscar();
+        a.buscarAnuncio();
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -76,7 +77,11 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
         anuncioDbo db = new anuncioDbo(this);
 
 
-            db.crear(a);
+          if(  db.crear(a)==false){
+              Toast.makeText(this,"Se creó correctamente",Toast.LENGTH_LONG).show();
+
+          }else {Toast.makeText(this,"Se produjo un Error por favor verificar",Toast.LENGTH_LONG).show();}
+
 
 }
 

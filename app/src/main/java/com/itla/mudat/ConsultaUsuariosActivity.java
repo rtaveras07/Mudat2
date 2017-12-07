@@ -24,13 +24,14 @@ public class ConsultaUsuariosActivity extends AppCompatActivity {
         list.setAdapter(a);
 
 
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Usuario usr = (Usuario)adapterView.getItemAtPosition(i);
 
-                Intent kk= new Intent(ConsultaUsuariosActivity.this,RegistroUsuario.class);
-                kk.putExtra("param",usr);
+                Intent kk= new Intent(ConsultaUsuariosActivity.this,RegistroUsuarioActivity.class);
+                kk.putExtra("params",usr);
                 startActivity(kk);
             }
         });
@@ -40,7 +41,7 @@ public class ConsultaUsuariosActivity extends AppCompatActivity {
 
 
     public void btnAgregarUsuario_click(View view) {
-        startActivity(new Intent(this,RegistroUsuario.class));
+        startActivity(new Intent(this,RegistroUsuarioActivity.class));
     }
 
 

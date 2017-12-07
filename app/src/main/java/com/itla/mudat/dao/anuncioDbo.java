@@ -4,8 +4,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import com.itla.mudat.Entity.Anuncio;
+import com.itla.mudat.Entity.Usuario;
+import com.itla.mudat.RegistroAnuncioActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,59 +20,58 @@ import java.util.List;
 public class anuncioDbo {
 
     private DbConection connetion;//creando el
+    public boolean error;
 
     public anuncioDbo(Context context) {
         connetion = new DbConection(context);
 
     }
 
-    public void crear(Anuncio an) {
+    public boolean crear(Anuncio an) {
 
         SQLiteDatabase db = connetion.getWritableDatabase();
         ContentValues cv = new ContentValues();
+        cv.put("fecha", an.getFecha());
+        cv.put("condicion", an.getCondicion());
+        cv.put("precio", an.getPrecio());
+        cv.put("titulo", an.getTitulo());
+        cv.put("ubicacion", an.getUbicacion());
 
- /* EditText fecha;
-    EditText condicion;
-    EditText precio;
-    EditText titulo;
-    EditText ubicacion;
-    EditText detalle;
-    EditText idusuario;
-    Anuncio anuncio;*/
+        try {
+            db.insert("anuncio", null, cv);
+            error = false;
+        } catch (Error er) {
+            error = true;
 
-        cv.put("fecha", an.getFecha().toString());
-        cv.put("condicion", an.getCondicion().toString());
-        cv.put("precio", an.getPrecio().toString());
-        cv.put("titulo", an.getTitulo().toString());
-        cv.put("ubicacion", an.getUbicacion().toString());
-        cv.put("detalle", an.getDetalle().toString());
-        cv.put("idusuario", an.getIdusuario().toString());
+        }
 
-        db.insert("anuncio", null, cv);
+
         db.close();
+        return error;
+
 
     }
 
-    public List<Anuncio> buscar() {
+    public List<Anuncio> buscarAnuncio() {
         List<Anuncio> anu = new ArrayList<>();
         SQLiteDatabase db = connetion.getWritableDatabase();
         String columnas[] = new String[]{"id", "fecha", "condicion", "precio", "titulo", "ubicacion", "detalle", "idUsuario"};
         Cursor cursor = db.query("anuncio", columnas, null, null, null, null, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Anuncio a = new Anuncio();
+            Anuncio anuncio = new Anuncio();
 
-            a.setFecha(cursor.getString(cursor.getColumnIndex("fecha")));
-            a.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
-            a.setPrecio(cursor.getDouble(cursor.getColumnIndex("precio")));
-            a.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
-            a.setUbicacion(cursor.getString(cursor.getColumnIndex("ubicacion")));
-            a.setDetalle(cursor.getString(cursor.getColumnIndex("detalle")));
-            a.setIdusuario(cursor.getString(cursor.getColumnIndex("idUsuario")));
+            anuncio.setFecha(cursor.getString(cursor.getColumnIndex("fecha")));
+            anuncio.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
+            anuncio.setPrecio(cursor.getDouble(cursor.getColumnIndex("precio")));
+            anuncio.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
+            anuncio.setUbicacion(cursor.getString(cursor.getColumnIndex("ubicacion")));
+            anuncio.setDetalle(cursor.getString(cursor.getColumnIndex("detalle")));
+            anuncio.setIdusuario(cursor.getInt(cursor.getColumnIndex("idUsuario")));
 
 
             cursor.moveToNext();
-            anu.add(a);
+            anu.add(anuncio);
 
 
         }
@@ -79,6 +81,7 @@ public class anuncioDbo {
 
 
     }
+
 
 
 }

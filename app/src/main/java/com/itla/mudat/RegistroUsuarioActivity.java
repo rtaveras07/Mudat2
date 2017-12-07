@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.itla.mudat.Entity.TipodeUsuario;
 import com.itla.mudat.Entity.Usuario;
@@ -14,7 +15,7 @@ import com.itla.mudat.dao.usuarioDbo;
 
 import static com.itla.mudat.dao.DbConection.LOG_T;
 
-public class RegistroUsuario extends AppCompatActivity {
+public class RegistroUsuarioActivity extends AppCompatActivity {
 
 
     EditText nombre;
@@ -75,12 +76,22 @@ public class RegistroUsuario extends AppCompatActivity {
         usuarioDbo db = new usuarioDbo(this);
 
 
-         if(null == usuario.getIdUsuario()){
+       /*  if(null == usuario.getIdUsuario()){
              db.crear(usuario);
          }
          else {
              db.editar(usuario);
          }
+*/
+
+       if(db.crear(usuario)==false){
+
+           Toast.makeText(this,"Datos insertados correctamente",Toast.LENGTH_LONG).show();
+       }else {
+
+           Toast.makeText(this,"Error",Toast.LENGTH_LONG).show();
+       }
+
 
     }
 

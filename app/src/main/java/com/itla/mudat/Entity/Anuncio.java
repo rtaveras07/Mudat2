@@ -1,14 +1,12 @@
 package com.itla.mudat.Entity;
 
-import android.widget.EditText;
-
-import java.util.Date;
+import java.io.Serializable;
 
 /**
  * Created by Owner on 11/18/2017.
  */
 
-public class Anuncio {
+public class Anuncio implements Serializable {
  Integer id;
  String fecha;
  String condicion;
@@ -16,7 +14,7 @@ public class Anuncio {
  String titulo;
  String ubicacion;
  String detalle;
- String idusuario;
+ Integer  idusuario;
 
 
  public Integer getId() {
@@ -75,11 +73,11 @@ public class Anuncio {
   this.detalle = detalle;
  }
 
- public String getIdusuario() {
+ public Integer getIdusuario() {
   return idusuario;
  }
 
- public void setIdusuario(String idusuario) {
+ public void setIdusuario(Integer idusuario) {
   this.idusuario = idusuario;
  }
 }
