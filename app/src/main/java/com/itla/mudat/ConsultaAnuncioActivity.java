@@ -26,21 +26,18 @@ public class ConsultaAnuncioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_consulta_anuncio);
 
 
-        anuncioDbo u=new anuncioDbo(this);
-        ListView list= findViewById(R.id.ListaAununcio); //asignar la lista a una variable local tipo listview
-        AnuncioListAdapter a=new AnuncioListAdapter(u.buscarAnuncio(),ConsultaAnuncioActivity.this);//instanciando el listadapter
-        list.setAdapter(a);//se le pasa el listadapter a listview de la actividad
+        anuncioDbo anunciodbo = new anuncioDbo(this);
+        ListView listview = findViewById(R.id.ListaAununcio); //asignar la lista a una variable local tipo listview
+        AnuncioListAdapter listaAdaptador = new AnuncioListAdapter(anunciodbo.buscarAnuncio(), ConsultaAnuncioActivity.this);//instanciando el listadapter
+        listview.setAdapter(listaAdaptador);//se le pasa el listadapter a listview de la actividad
 
-
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Anuncio anu = (Anuncio) adapterView.getItemAtPosition(i);
+                Anuncio anuncio = (Anuncio) adapterView.getItemAtPosition(i);
 
-                Intent intent= new Intent(ConsultaAnuncioActivity.this,RegistroAnuncioActivity.class);
-         intent.putExtra("param",  anu);
-
+                Intent intent = new Intent(ConsultaAnuncioActivity.this, RegistroAnuncioActivity.class);
+                intent.putExtra("param", anuncio);
                 startActivity(intent);
             }
         });

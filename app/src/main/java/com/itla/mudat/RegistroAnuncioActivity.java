@@ -41,8 +41,8 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
         detalle = (EditText) findViewById(R.id.txtDetalle);
         idusuario = (EditText) findViewById(R.id.txtIdUsuario);
 
-        anuncioDbo a = new anuncioDbo(this);
-        a.buscarAnuncio();
+        //anuncioDbo a = new anuncioDbo(this);
+        //a.buscarAnuncio();
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {

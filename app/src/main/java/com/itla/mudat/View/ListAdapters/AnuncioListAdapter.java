@@ -23,39 +23,48 @@ public class AnuncioListAdapter extends BaseAdapter {
 
     public AnuncioListAdapter(List<Anuncio> anuncio, Activity context) {
         this.anuncio = anuncio;
-        this.context = context;//campos que se desplegaran en la consulta.
+        this.context = context;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return anuncio.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return anuncio.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return anuncio.get(i).getId();
     }
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-
-
-
-        return null;
-    }
 
     public String getItemTitulo(int i){
         return anuncio.get(i).getTitulo();
-
     }
 
     public String getItemDetalle(int i){
         return anuncio.get(i).getDetalle();
 
+    }
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
 
-    }}
+        if(view==null){
+            view=View.inflate(context.getApplicationContext(), R.layout.lista_anuncio_row,null);
+        }
+
+        TextView tituloview=view.findViewById(R.id.luTitulo);
+        TextView detalleview=view.findViewById(R.id.luDetalle);
+
+        tituloview.setText(getItemTitulo(i));
+        detalleview.setText(getItemDetalle(i));
+
+        return view;
+    }
+
+
+}

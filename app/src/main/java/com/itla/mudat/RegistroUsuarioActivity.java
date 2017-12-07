@@ -40,8 +40,8 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         telefono = (EditText) findViewById(R.id.txtTelefono);
         clave = (EditText) findViewById(R.id.txtClave);
 
-        usuarioDbo u = new usuarioDbo(this);
-        u.buscar();
+       // usuarioDbo u = new usuarioDbo(this);
+        //u.buscar();
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
