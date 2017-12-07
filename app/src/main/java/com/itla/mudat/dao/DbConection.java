@@ -14,7 +14,7 @@ public class DbConection extends SQLiteOpenHelper{
     public DbConection(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
-     public static String DATABASE_NAME="mudatdb0.db";
+     public static String DATABASE_NAME="mudat.db";
     public static String LOG_T="DbConnetion";
 
     public DbConection(Context context) {

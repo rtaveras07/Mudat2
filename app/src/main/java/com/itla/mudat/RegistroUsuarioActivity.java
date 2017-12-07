@@ -46,12 +46,12 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             usuario = (Usuario) bundle.getSerializable("param");
-            nombre.setText(usuario.getNombre());
+            nombre.setText(usuario.getNombre().toString());
             tipoUsuario.setText(usuario.getTipoUsuario().toString());
             idIdentificacion.setText(idIdentificacion.getText().toString());
-            email.setText(usuario.getEmail());
-            telefono.setText(usuario.getTelefono());
-            clave.setText(usuario.getClave());
+            email.setText(usuario.getEmail().toString());
+            telefono.setText(usuario.getTelefono().toString());
+            clave.setText(usuario.getClave().toString());
 
         }
 

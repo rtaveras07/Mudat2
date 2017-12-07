@@ -21,6 +21,7 @@ public class anuncioDbo {
 
     private DbConection connetion;//creando el
     public boolean error;
+    public Anuncio anuncio;
 
     public anuncioDbo(Context context) {
         connetion = new DbConection(context);
@@ -36,6 +37,9 @@ public class anuncioDbo {
         cv.put("precio", an.getPrecio());
         cv.put("titulo", an.getTitulo());
         cv.put("ubicacion", an.getUbicacion());
+        cv.put("detalle",an.getDetalle());
+        cv.put("idusuario",an.getIdusuario());
+
 
         try {
             db.insert("anuncio", null, cv);
@@ -55,11 +59,12 @@ public class anuncioDbo {
     public List<Anuncio> buscarAnuncio() {
         List<Anuncio> anu = new ArrayList<>();
         SQLiteDatabase db = connetion.getWritableDatabase();
-        String columnas[] = new String[]{"id", "fecha", "condicion", "precio", "titulo", "ubicacion", "detalle", "idUsuario"};
+        String columnas[] = new String[]{"fecha", "condicion", "precio", "titulo", "ubicacion", "detalle", "idUsuario"};
         Cursor cursor = db.query("anuncio", columnas, null, null, null, null, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Anuncio anuncio = new Anuncio();
+
+            anuncio = new Anuncio();
 
             anuncio.setFecha(cursor.getString(cursor.getColumnIndex("fecha")));
             anuncio.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
@@ -81,7 +86,6 @@ public class anuncioDbo {
 
 
     }
-
 
 
 }

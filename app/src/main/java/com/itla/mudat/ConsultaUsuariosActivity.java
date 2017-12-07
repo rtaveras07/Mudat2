@@ -31,7 +31,7 @@ public class ConsultaUsuariosActivity extends AppCompatActivity {
                 Usuario usr = (Usuario)adapterView.getItemAtPosition(i);
 
                 Intent kk= new Intent(ConsultaUsuariosActivity.this,RegistroUsuarioActivity.class);
-                kk.putExtra("params",usr);
+                kk.putExtra("param",usr);
                 startActivity(kk);
             }
         });

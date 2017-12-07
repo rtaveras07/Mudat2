@@ -10,10 +10,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.itla.mudat.Entity.Anuncio;
-import com.itla.mudat.Entity.Usuario;
 import com.itla.mudat.View.ListAdapters.UsuarioListAdapter;
 import com.itla.mudat.dao.anuncioDbo;
-import com.itla.mudat.dao.usuarioDbo;
+
 
 public class RegistroAnuncioActivity extends AppCompatActivity {
 
@@ -47,48 +46,48 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            anuncio = (Anuncio) bundle.getSerializable("parametros");
-            fecha.setText(anuncio.getFecha());
-            condicion.setText(anuncio.getCondicion());
+            anuncio = (Anuncio) bundle.getSerializable("parame");
+            fecha.setText(anuncio.getFecha().toString());
+            condicion.setText(anuncio.getCondicion().toString());
             precio.setText(anuncio.getPrecio().toString());
-            titulo.setText(anuncio.getTitulo());
-            ubicacion.setText(anuncio.getUbicacion());
-            detalle.setText(anuncio.getDetalle());
+            titulo.setText(anuncio.getTitulo().toString());
+            ubicacion.setText(anuncio.getUbicacion().toString());
+            detalle.setText(anuncio.getDetalle().toString());
+            idusuario.setText(Integer.valueOf(anuncio.getIdusuario().toString()));
 
         }
-
-
 
 
     }
 
     public void btnAgregarAnuncio_click(View view) {
         //instanciando la clase usuario
-        Anuncio a= new Anuncio();
+        Anuncio a = new Anuncio();
         //asignando los campos a las variables
-        fecha.setText(fecha.getText().toString());
-        condicion.setText(condicion.getText().toString());
-        precio.setText(precio.getText().toString());
-        titulo.setText(titulo.getText().toString());
-        ubicacion.setText(ubicacion.getText().toString());
-        detalle.setText(detalle.getText().toString());
-        idusuario.setText(idusuario.getText().toString());
-        // Log.i(LOG_T, "Registrando usuario:" + usuario.toString());
+        a.setFecha(fecha.getText().toString());
+        a.setCondicion(condicion.getText().toString());
+        a.setPrecio(Double.parseDouble(precio.getText().toString()));
+        a.setTitulo(titulo.getText().toString());
+        a.setUbicacion(ubicacion.getText().toString());
+        a.setDetalle(detalle.getText().toString());
+        a.setIdusuario(Integer.parseInt(idusuario.getText().toString()));
+
         anuncioDbo db = new anuncioDbo(this);
 
 
-          if(  db.crear(a)==false){
-              Toast.makeText(this,"Se creó correctamente",Toast.LENGTH_LONG).show();
+        if (db.crear(a) == false) {
+            Toast.makeText(this, "Se creó correctamente", Toast.LENGTH_LONG).show();
 
-          }else {Toast.makeText(this,"Se produjo un Error por favor verificar",Toast.LENGTH_LONG).show();}
+        } else {
+            Toast.makeText(this, "Se produjo un Error por favor verificar", Toast.LENGTH_LONG).show();
+        }
 
 
-}
-
-    public void regAnuncio(View view) {
-        startActivity(new Intent(this,RegistroAnuncioActivity.class));
     }
 
+    public void regAnuncio(View view) {
+        startActivity(new Intent(this, RegistroAnuncioActivity.class));
+    }
 
 
 }
