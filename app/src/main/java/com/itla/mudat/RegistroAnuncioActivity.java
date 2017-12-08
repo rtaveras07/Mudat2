@@ -46,14 +46,14 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            anuncio = (Anuncio) bundle.getSerializable("parame");
-            fecha.setText(anuncio.getFecha().toString());
-            condicion.setText(anuncio.getCondicion().toString());
+            anuncio = (Anuncio) bundle.getSerializable("param");
+           fecha.setText(anuncio.getFecha().toString());
+        condicion.setText(anuncio.getCondicion().toString());
             precio.setText(anuncio.getPrecio().toString());
             titulo.setText(anuncio.getTitulo().toString());
             ubicacion.setText(anuncio.getUbicacion().toString());
             detalle.setText(anuncio.getDetalle().toString());
-            idusuario.setText(Integer.valueOf(anuncio.getIdusuario().toString()));
+         idusuario.setText((anuncio.getIdusuario().toString()));
 
         }
 

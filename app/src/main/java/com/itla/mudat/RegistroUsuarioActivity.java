@@ -20,7 +20,7 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
 
     EditText nombre;
     EditText tipoUsuario;
-    EditText  idIdentificacion;
+    EditText  ididentificacion;
     EditText email;
     EditText telefono;
     EditText clave;
@@ -35,7 +35,7 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         //opteniendo los objetos campos
         nombre = (EditText) findViewById(R.id.txtNombres);
         tipoUsuario = (EditText) findViewById(R.id.txtTipoUsuario);
-        idIdentificacion =  findViewById(R.id.txtidentificacion);
+        ididentificacion = (EditText) findViewById(R.id.txtidentificacion);
         email = (EditText) findViewById(R.id.txtemail);
         telefono = (EditText) findViewById(R.id.txtTelefono);
         clave = (EditText) findViewById(R.id.txtClave);
@@ -46,9 +46,10 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             usuario = (Usuario) bundle.getSerializable("param");
+           // usuario = (Usuario) bundle.getSerializable(Usuario.class.getSimpleName());
             nombre.setText(usuario.getNombre().toString());
-            tipoUsuario.setText(usuario.getTipoUsuario().toString());
-            idIdentificacion.setText(idIdentificacion.getText().toString());
+            tipoUsuario.setText ((usuario.getTipoUsuario().toString()));
+            ididentificacion.setText("1");//usuario.getIdIdentificacion().toString()
             email.setText(usuario.getEmail().toString());
             telefono.setText(usuario.getTelefono().toString());
             clave.setText(usuario.getClave().toString());
@@ -65,14 +66,13 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         usuario = new Usuario();
         //asignando los campos a las variables
         usuario.setNombre(nombre.getText().toString());
-        //tipo de usuario cliente
-        usuario.setTipoUsuario(TipodeUsuario.CLIENTE);
-       usuario.setIdIdentificacion(Integer.parseInt(idIdentificacion.getText().toString()));
-        usuario.setClave(clave.getText().toString());
+       usuario.setTipoUsuario(TipodeUsuario.CLIENTE);
+       usuario.setIdIdentificacion(Integer.parseInt(ididentificacion.getText().toString()));
+       usuario.setClave(clave.getText().toString());
         usuario.setTelefono(telefono.getText().toString());
         usuario.setEmail(email.getText().toString());
-        usuario.setTipoUsuario(TipodeUsuario.CLIENTE);
-       // Log.i(LOG_T, "Registrando usuario:" + usuario.toString());
+
+         Log.i(LOG_T, "Registrando usuario:" +  usuario.getIdIdentificacion().toString());
         usuarioDbo db = new usuarioDbo(this);
 
 

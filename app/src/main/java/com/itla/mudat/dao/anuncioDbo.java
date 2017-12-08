@@ -55,7 +55,7 @@ public class anuncioDbo {
     public List<Anuncio> buscarAnuncio() {
         List<Anuncio> anu = new ArrayList<>();
         SQLiteDatabase db = connetion.getWritableDatabase();
-        String columnas[] = new String[]{"id", "fecha", "condicion", "precio", "titulo", "ubicacion", "detalle", "idUsuario"};
+        String columnas[] = new String[]{"id", "fecha", "condicion", "precio", "titulo", "ubicacion", "detalle", "idusuario"};
         Cursor cursor = db.query("anuncio", columnas, null, null, null, null, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -63,12 +63,13 @@ public class anuncioDbo {
             anuncio = new Anuncio();
             anuncio.setId(cursor.getInt(cursor.getColumnIndex("id")));
             anuncio.setFecha(cursor.getString(cursor.getColumnIndex("fecha")));
+            anuncio.setCondicion(cursor.getString(cursor.getColumnIndex("condicion")));
             anuncio.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
             anuncio.setPrecio(cursor.getDouble(cursor.getColumnIndex("precio")));
             anuncio.setTitulo(cursor.getString(cursor.getColumnIndex("titulo")));
             anuncio.setUbicacion(cursor.getString(cursor.getColumnIndex("ubicacion")));
             anuncio.setDetalle(cursor.getString(cursor.getColumnIndex("detalle")));
-//            anuncio.setIdusuario(cursor.getInt(cursor.getColumnIndex("idUsuario")));
+            anuncio.setIdusuario(cursor.getInt(cursor.getColumnIndex("idusuario")));
 
 
             cursor.moveToNext();

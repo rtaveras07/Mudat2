@@ -80,7 +80,7 @@ public class usuarioDbo {
             Usuario u = new Usuario();
             u.setIdUsuario(cursor.getInt(cursor.getColumnIndex("id")));
             u.setNombre(cursor.getString(cursor.getColumnIndex("nombre")));
-            u.setIdIdentificacion(cursor.getInt(cursor.getColumnIndex("identificacion")));
+            u.setIdIdentificacion(cursor.getColumnIndex("identificacion"));
             u.setTelefono(cursor.getString(cursor.getColumnIndex("telefono")));
             u.setClave(cursor.getString(cursor.getColumnIndex("clave")));
             u.setEmail(cursor.getString(cursor.getColumnIndex("email")));

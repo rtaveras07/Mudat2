@@ -50,14 +50,6 @@
 
         </ListView>
 
-        <Button
-            android:id="@+id/bntConsular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Consultar"
-            android:onClick="consulta"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="414dp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
