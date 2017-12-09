@@ -14,7 +14,7 @@ import com.itla.mudat.dao.categoriaDbo;
 public class RegistroCategoriaActivity extends AppCompatActivity {
     EditText categoria;
 EditText nombre;
-EditText id;
+//EditText id;
 
 Categoria ca=new Categoria();
     @Override
@@ -33,8 +33,8 @@ Categoria ca=new Categoria();
 
     Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-        ca = (Categoria) bundle.getSerializable("parametro");
-        id.setText(ca.getIdCategoria().toString());
+        ca = (Categoria) bundle.getSerializable("parametros");
+       // id.setText(ca.getIdCategoria().toString());
         nombre.setText(ca.getNombre().toString());
 
 

@@ -109,13 +109,16 @@
             android:ems="10"
             android:text="" />
 
+
         <Button
             android:id="@+id/btnAgregar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Agregar Registro"
             android:onClick="btnAgregarAnuncio_click"
-            />
+            android:text="Agregar Registro" />
+
+
+
 
 
     </LinearLayout>

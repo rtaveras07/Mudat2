@@ -9,7 +9,7 @@ public class SQLiteHelperSchema {
             "CREATE TABLE `usuario` (\n" +
             "\t`id`\tINTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,\n" +
             "\t`nombre`\tTEXT,\n" +
-            "\t`identificacion`\tINTEGER,\n" +
+            "\t`identificacion`\tTEXT,\n" +
             "\t`telefono`\tTEXT,\n" +
             "\t`clave`\tTEXT,\n" +
             "\t`email`\tTEXT,\n" +

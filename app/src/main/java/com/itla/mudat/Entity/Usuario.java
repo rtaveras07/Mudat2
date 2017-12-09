@@ -28,7 +28,7 @@ public class Usuario implements Serializable {
     Integer idUsuario;
     String nombre;
     TipodeUsuario tipoUsuario;
-    Integer idIdentificacion;
+    String idIdentificacion;
     String email;
     String telefono;
     String clave;
@@ -59,12 +59,12 @@ public class Usuario implements Serializable {
     }
 
 
-    public Integer getIdIdentificacion() {
+    public String getIdIdentificacion() {
         return idIdentificacion;
     }
 
-    public void setIdIdentificacion(int id ) {
-        this.idIdentificacion = idIdentificacion;
+    public void setIdIdentificacion(String id ) {
+        this.idIdentificacion = id;
     }
 
     public String getEmail() {

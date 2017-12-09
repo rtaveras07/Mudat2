@@ -30,8 +30,8 @@ public class ConsultaCategActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Categoria categoria = (Categoria) adapterView.getItemAtPosition(i);
 
-                Intent intent = new Intent(ConsultaCategActivity.this, RegistroAnuncioActivity.class);
-                intent.putExtra("parametros", (Parcelable) categoria);
+                Intent intent = new Intent(ConsultaCategActivity.this, RegistroCategoriaActivity.class);
+                intent.putExtra("parametros",  categoria);
                 startActivity(intent);
             }
         });

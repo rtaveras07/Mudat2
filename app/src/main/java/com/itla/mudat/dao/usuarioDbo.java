@@ -4,14 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.itla.mudat.Entity.TipodeUsuario;
 import com.itla.mudat.Entity.Usuario;
-import com.itla.mudat.RegistroAnuncioActivity;
 
-import java.sql.SQLInput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +17,7 @@ import java.util.List;
 
 public class usuarioDbo {
     private DbConection connetion;//creando el
-    public Boolean error;
+    public Boolean paso;
 
     public usuarioDbo(Context context) {
         connetion = new DbConection(context);
@@ -45,15 +41,15 @@ public class usuarioDbo {
             db.insert("usuario", null, cv);
 
             db.close();
-            error = false;
+            paso = true;
         } catch (Error e) {
-            error = true;
+            paso = false;
         }
-        return error;
+        return paso;
     }
 
 
-    public void editar(Usuario usuario) {
+    public boolean editar(Usuario usuario) {
 
         SQLiteDatabase db = connetion.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -65,8 +61,17 @@ public class usuarioDbo {
         cv.put("email", usuario.getEmail());
         cv.put("tipousuario", usuario.getTipoUsuario().toString());
         cv.put("estatus", usuario.getEstatus());
-        db.update("usuario", cv, "id=" + usuario.getIdUsuario(), null);
-        db.close();
+
+
+
+        try {
+            db.update("usuario", cv, "id=" + usuario.getIdUsuario(), null);
+            db.close();
+            paso = false;
+        } catch (Error e) {
+            paso = true;
+        }
+        return paso;
 
     }
 
@@ -80,7 +85,7 @@ public class usuarioDbo {
             Usuario u = new Usuario();
             u.setIdUsuario(cursor.getInt(cursor.getColumnIndex("id")));
             u.setNombre(cursor.getString(cursor.getColumnIndex("nombre")));
-            u.setIdIdentificacion(cursor.getColumnIndex("identificacion"));
+            u.setIdIdentificacion(cursor.getString(cursor.getColumnIndex("identificacion")));
             u.setTelefono(cursor.getString(cursor.getColumnIndex("telefono")));
             u.setClave(cursor.getString(cursor.getColumnIndex("clave")));
             u.setEmail(cursor.getString(cursor.getColumnIndex("email")));

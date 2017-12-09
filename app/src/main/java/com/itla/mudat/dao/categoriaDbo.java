@@ -42,12 +42,15 @@ public class categoriaDbo {
         Cursor cursor = db.query("categoria", columnas, null, null, null, null, null);
        //ASIGANDO LA CONSULTA AL CURSOR
         cursor.moveToFirst();// MOVER EL CURSOS A
+
         while (!cursor.isAfterLast()) {//MIENTRAS NO SEA EL ULTIMO REGISTRO
             Categoria u = new Categoria();
+            u.setIdCategoria(cursor.getInt(cursor.getColumnIndex("id")));//SE ASIGNAN LOS VALORES
             u.setNombre(cursor.getString(cursor.getColumnIndex("nombre")));//SE ASIGNAN LOS VALORES
             cursor.moveToNext();
             cat.add(u);
         }
+
         cursor.close();
         db.close();
         return cat;

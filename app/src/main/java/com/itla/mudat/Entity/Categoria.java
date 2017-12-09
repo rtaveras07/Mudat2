@@ -2,11 +2,13 @@ package com.itla.mudat.Entity;
 
 import android.database.Cursor;
 
+import java.io.Serializable;
+
 /**
  * Created by Owner on 11/18/2017.
  */
 
-public class Categoria {
+public class Categoria implements Serializable {
     //ESTA CLASE ES PARA LA ENTIDAD Y SUS ATRIBUTOS, GETTER Y SETTER
     Integer idCategoria;
     String nombre;
