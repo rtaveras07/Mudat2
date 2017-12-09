@@ -22,6 +22,7 @@ public class anuncioDbo {
     private DbConection connetion;//creando el
     public boolean error;
     public Anuncio anuncio;
+    public Boolean paso;
 
     public anuncioDbo(Context context) {
         connetion = new DbConection(context);
@@ -74,9 +75,8 @@ public class anuncioDbo {
 
             cursor.moveToNext();
             anu.add(anuncio);
-
-
         }
+
         cursor.close();
         db.close();
         return anu;
@@ -84,5 +84,27 @@ public class anuncioDbo {
 
     }
 
+    public boolean editarrAnuncio(Anuncio a) {
 
+        SQLiteDatabase db = connetion.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+
+        cv.put("condicion", a.getCondicion());
+        cv.put("precio", a.getPrecio());
+        cv.put("titulo", a.getTitulo());
+        cv.put("ubicacion", a.getUbicacion());
+        cv.put("detalle", a.getDetalle());
+
+
+
+        try {
+            db.update("anuncio", cv, "id=" + a.getId(), null);
+            db.close();
+            paso = true;
+        } catch (Error e) {
+            paso = false;
+        }
+        return paso;
+    }
 }

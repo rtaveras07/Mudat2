@@ -12,6 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:padding="10dp"
     >
 
     <TextView
@@ -19,17 +20,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColorHighlight="@color/colorPrimaryDark"
-        android:text="Titulo" />
+        android:text="Titulo"
+        android:textColor="@android:color/black"
+        />
 
     <TextView
         android:id="@+id/luDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColorHighlight="@color/colorPrimaryDark"
         android:text="Detalle"
+        android:textColor="@android:color/black"
 
 
         />
+    <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio"
+        android:textColor="@android:color/black"
+
+
+        />
+
+    <TextView
+        android:id="@+id/txtDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Direccion"
+        android:textColor="@android:color/black"
+
+
+        />
+
+
+
 
 </LinearLayout>
 

@@ -46,6 +46,14 @@ public class AnuncioListAdapter extends BaseAdapter {
         return anuncio.get(i).getTitulo();
     }
 
+    public Double getItemPrecio(int i){
+        return anuncio.get(i).getPrecio();
+    }
+
+    public String getItemUbicacion(int i){
+        return anuncio.get(i).getUbicacion();
+    }
+
     public String getItemDetalle(int i){
         return anuncio.get(i).getDetalle();
 
@@ -59,9 +67,13 @@ public class AnuncioListAdapter extends BaseAdapter {
 
         TextView tituloview=view.findViewById(R.id.luTitulo);
         TextView detalleview=view.findViewById(R.id.luDetalle);
+        TextView direccion=view.findViewById(R.id.txtDireccion);
+        TextView precio=view.findViewById(R.id.txtPrecio);
 
         tituloview.setText(getItemTitulo(i));
         detalleview.setText(getItemDetalle(i));
+        direccion.setText(getItemUbicacion(i));
+        precio.setText(getItemPrecio(i).toString());
 
         return view;
     }

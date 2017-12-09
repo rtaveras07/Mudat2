@@ -18,7 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColorHighlight="@color/colorPrimaryDark"
-            android:text="Categoria" />
+            android:text="Categoria"
+            android:textColor="@android:color/black"/>
 
 
 

@@ -56,8 +56,6 @@ private Activity context;
 
         if(view==null){
             view=View.inflate(context.getApplicationContext(), R.layout.lista_usuario_row,null);
-
-
         }
 
         TextView nombre=view.findViewById(R.id.luNombre);

@@ -16,20 +16,6 @@
 
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fecha" />
-
-        <EditText
-            android:id="@+id/txtfecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Condición" />
@@ -95,18 +81,6 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="IdUsuario" />
-
-        <EditText
-            android:id="@+id/txtIdUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
             android:text="" />
 
 
