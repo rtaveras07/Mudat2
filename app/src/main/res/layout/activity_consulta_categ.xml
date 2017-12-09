@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.itla.mudat.ConsultaUsuariosActivity">
+    tools:context="com.itla.mudat.ConsultaCategActivity">
 
 
     <LinearLayout
@@ -16,15 +16,14 @@
             android:id="@+id/btnAgregarUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="btnAgregarUsuario_click"
-            android:text="Agregar Usuario"
-              />
+            android:onClick="buscarc"
+            android:text="Agregar Categoría"
+            />
 
         <ListView
-            android:id="@+id/listausuario"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:id="@+id/listacategoria"
             />
 
     </LinearLayout>

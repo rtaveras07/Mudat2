@@ -19,7 +19,7 @@
         <activity
             android:name=".RegistroUsuarioActivity"
             android:parentActivityName=".ConsultaUsuariosActivity" />
-        <activity android:name=".RegistroCategoria" />
+
         <activity
             android:name=".ConsultaUsuariosActivity"
             android:parentActivityName=".MainActivity" />
@@ -29,7 +29,16 @@
         <activity
             android:name=".RegistroAnuncioActivity"
             android:parentActivityName=".ConsultaAnuncioActivity" />
-        <activity android:name=".ConsultaCategoriaActivity"></activity>
+        <activity
+            android:name=".ConsultaCategActivity"
+            android:parentActivityName=".RegistroCategoriaActivity"/>
+
+        <activity
+            android:name=".RegistroCategoriaActivity"
+            android:parentActivityName=".ConsultaAnuncioActivity"/>
+
+
+
     </application>
 
 </manifest>

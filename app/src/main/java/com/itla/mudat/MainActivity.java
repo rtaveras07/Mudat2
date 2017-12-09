@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void categoria(View view) {
-        Intent i = new Intent(this, RegistroCategoria.class );
+        Intent i = new Intent(this, ConsultaCategActivity.class );
         startActivity(i);
     }
 

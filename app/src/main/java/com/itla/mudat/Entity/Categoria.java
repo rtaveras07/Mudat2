@@ -7,6 +7,7 @@ import android.database.Cursor;
  */
 
 public class Categoria {
+    //ESTA CLASE ES PARA LA ENTIDAD Y SUS ATRIBUTOS, GETTER Y SETTER
     Integer idCategoria;
     String nombre;
 
