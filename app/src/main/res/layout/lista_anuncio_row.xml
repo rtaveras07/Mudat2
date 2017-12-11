@@ -16,6 +16,14 @@
     >
 
     <TextView
+        android:id="@+id/Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:text="Titulo:"
+        android:textColor="@android:color/black"
+        />
+    <TextView
         android:id="@+id/luTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

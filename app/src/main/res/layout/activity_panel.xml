@@ -30,7 +30,8 @@
             android:onClick="categoria"
             android:text="Categoria"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="75dp" />
+            tools:layout_editor_absoluteY="75dp"
+            />
 
         <Button
             android:id="@+id/button"
