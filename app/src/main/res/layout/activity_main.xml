@@ -9,6 +9,7 @@
    <ListView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
+
        android:id="@+id/ListaAununcio"/>
 
    <android.support.design.widget.FloatingActionButton
@@ -18,7 +19,6 @@
        app:layout_anchorGravity="bottom|right|end"
        android:tint="@android:color/white"
        android:layout_margin="20dp"
-       android:src="@android:drawable/ic_input_add"
        android:onClick="panelmainclic"
 
        />

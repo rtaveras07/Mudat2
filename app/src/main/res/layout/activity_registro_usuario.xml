@@ -106,16 +106,10 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Aceptar"
-                 android:onClick="Aceptar"/>
+                 android:onClick="Aceptar"/><![CDATA[
                  />
 
-             <Button
-                 android:id="@+id/bntCancelar"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Cancelar"
-                />
-
+             ]]>
          </LinearLayout>
      </LinearLayout>
 
