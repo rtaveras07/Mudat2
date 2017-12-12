@@ -26,4 +26,9 @@ public class PanelActivity extends AppCompatActivity {
         Intent i = new Intent(this, ConsultaAnuncioActivity.class );
         startActivity(i);
     }
+
+    public void bntSalir(View view) {
+        finish();
+
+    }
 }

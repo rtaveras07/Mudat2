@@ -19,6 +19,7 @@
        app:layout_anchorGravity="bottom|right|end"
        android:tint="@android:color/white"
        android:layout_margin="20dp"
+       android:src="@android:drawable/ic_input_add"
        android:onClick="panelmainclic"
 
        />
