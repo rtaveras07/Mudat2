@@ -9,7 +9,10 @@
    <ListView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-
+       android:textColor="#00FF00"
+       android:typeface="monospace"
+       android:textSize="36sp"
+       a
        android:id="@+id/ListaAununcio"/>
 
    <android.support.design.widget.FloatingActionButton
