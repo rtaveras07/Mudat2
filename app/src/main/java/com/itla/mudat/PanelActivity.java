@@ -33,7 +33,7 @@ public class PanelActivity extends AppCompatActivity {
     }
 
     public void ClicCerrarSesion(View view) {
-        Intent i=new Intent(this, PanelActivity.class);
+        Intent i=new Intent(this, MainActivity.class);
 
         startActivity(i);
     }

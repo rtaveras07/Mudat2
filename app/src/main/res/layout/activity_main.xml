@@ -12,7 +12,7 @@
        android:textColor="#00FF00"
        android:typeface="monospace"
        android:textSize="36sp"
-       a
+
        android:id="@+id/ListaAununcio"/>
 
    <android.support.design.widget.FloatingActionButton

@@ -50,15 +50,6 @@
             android:onClick="bntSalir"
            />
 
-        <Button
-            android:id="@+id/bntCerrarSesion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cerrar sesión"
-            android:onClick="ClicCerrarSesion"
-            />
-
-
 
     </LinearLayout>
 
