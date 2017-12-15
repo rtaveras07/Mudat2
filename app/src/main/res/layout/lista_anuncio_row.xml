@@ -15,43 +15,73 @@
     android:padding="10dp"
     >
 
-    <TextView
-        android:id="@+id/luTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColorHighlight="@color/colorPrimaryDark"
-        android:text="Titulo"
-        android:textColor="@android:color/black"
-        />
-
-    <TextView
-        android:id="@+id/luDetalle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detalle"
-        android:textColor="@android:color/black"
 
 
-        />
-    <TextView
-        android:id="@+id/txtPrecio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Precio"
-        android:textColor="@android:color/black"
 
 
-        />
-
-    <TextView
-        android:id="@+id/txtDireccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Direccion"
-        android:textColor="@android:color/black"
 
 
-        />
+
+    <LinearLayout
+        android:paddingRight="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/luTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Detalle"
+            android:textColor="@android:color/holo_blue_light"
+
+
+            />
+
+        <TextView
+            android:id="@+id/luDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemFecha"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="detalle del anuncio que se desplegara aqui  detalle del anuncio que se desplegara aqui"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtPrecio"
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Precio: $500.00"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Direccion"
+                android:textColor="@android:color/black"
+
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 
