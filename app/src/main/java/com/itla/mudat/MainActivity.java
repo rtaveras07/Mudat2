@@ -13,6 +13,7 @@ import com.itla.mudat.dao.anuncioDbo;
 public class MainActivity extends AppCompatActivity {
 
    public static Usuario usuarioActual;
+    public static Integer idUsuarioActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         anuncioDbo anunciodbo = new anuncioDbo(this);
         ListView listview = findViewById(R.id.ListaAununcio); //asignar la lista a una variable local tipo listview
-        AnuncioListAdapter listaAdaptador = new AnuncioListAdapter(anunciodbo.buscarAnuncio(), MainActivity.this);//instanciando el listadapter
+        AnuncioListAdapter listaAdaptador = new AnuncioListAdapter(anunciodbo.buscarAnuncio(null), MainActivity.this);//instanciando el listadapter
         listview.setAdapter(listaAdaptador);//se le pasa el listadapter a listview de la actividad
     }
 

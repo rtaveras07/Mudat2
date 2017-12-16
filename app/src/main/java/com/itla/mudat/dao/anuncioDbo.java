@@ -53,11 +53,18 @@ public class anuncioDbo {
         return error;
     }
 
-    public List<Anuncio> buscarAnuncio() {
+    public List<Anuncio> buscarAnuncio(String u) {
         List<Anuncio> anu = new ArrayList<>();
         SQLiteDatabase db = connetion.getWritableDatabase();
         String columnas[] = new String[]{"id", "fecha", "condicion", "precio", "titulo", "ubicacion", "detalle", "idusuario"};
-        Cursor cursor = db.query("anuncio", columnas, null, null, null, null, null);
+        Cursor cursor;
+        if(u==null) {
+             cursor = db.query("anuncio", columnas, null, null, null, null, null);
+        }else {
+            cursor = db.query("anuncio", columnas, "idusuario="+u, null, null, null, null);
+
+        }
+
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
 

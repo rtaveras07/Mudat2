@@ -26,34 +26,28 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
     EditText titulo;
     EditText ubicacion;
     EditText detalle;
-    Integer idusuario;
+    EditText idusuario;
     Anuncio anuncio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_anuncio);
-        Date curDate = new Date();
-
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-
-        String DateToStr = format.format(curDate);
 
 
-        //capturando los campos de la actividad
-        fecha = DateToStr.toString();
+        anuncio = new Anuncio();
         condicion = (EditText) findViewById(R.id.txtCondicion);
         precio = (EditText) findViewById(R.id.txtPrecio);
         titulo = (EditText) findViewById(R.id.txtTitulo);
         ubicacion = (EditText) findViewById(R.id.txtUbicacion);
         detalle = (EditText) findViewById(R.id.txtDetalle);
-        idusuario = 1234;
+
 
         //anuncioDbo a = new anuncioDbo(this);
         //a.buscarAnuncio();
 
         Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
+        if (bundle != null && bundle.containsKey("param")) {
             anuncio = (Anuncio) bundle.getSerializable("param");
            //fecha.setText(anuncio.getFecha().toString());
         condicion.setText(anuncio.getCondicion().toString());
@@ -61,7 +55,7 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
             titulo.setText(anuncio.getTitulo().toString());
             ubicacion.setText(anuncio.getUbicacion().toString());
             detalle.setText(anuncio.getDetalle().toString());
-        // idusuario.setText((anuncio.getIdusuario().toString()));
+          //  idusuario.setText((MainActivity.usuarioActual.getIdUsuario()));
 
         }
 
@@ -69,6 +63,20 @@ public class RegistroAnuncioActivity extends AppCompatActivity {
     }
 
     public void btnAgregarAnuncio_click(View view) {
+
+        Date curDate = new Date();
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+
+        String fecha = format.format(curDate);
+
+        if (anuncio ==null){
+            anuncio = new Anuncio();
+        }
+
+
+        //capturando los campos de la actividad
+
 
         //asignando los campos a las variables
         anuncio.setFecha(fecha);

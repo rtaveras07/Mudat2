@@ -28,7 +28,7 @@ public class ConsultaAnuncioActivity extends AppCompatActivity {
 
         anuncioDbo anunciodbo = new anuncioDbo(this);
         ListView listview = findViewById(R.id.ListaAununcio); //asignar la lista a una variable local tipo listview
-        AnuncioListAdapter listaAdaptador = new AnuncioListAdapter(anunciodbo.buscarAnuncio(), ConsultaAnuncioActivity.this);//instanciando el listadapter
+        AnuncioListAdapter listaAdaptador = new AnuncioListAdapter(anunciodbo.buscarAnuncio(MainActivity.usuarioActual.getIdUsuario().toString()), ConsultaAnuncioActivity.this);//instanciando el listadapter
         listview.setAdapter(listaAdaptador);//se le pasa el listadapter a listview de la actividad
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

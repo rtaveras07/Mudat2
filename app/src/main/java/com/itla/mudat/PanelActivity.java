@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.itla.mudat.Entity.Usuario;
+
 public class PanelActivity extends AppCompatActivity {
 
     @Override
@@ -28,12 +30,15 @@ public class PanelActivity extends AppCompatActivity {
     }
 
     public void bntSalir(View view) {
-        finish();
+       MainActivity.idUsuarioActual=null;
+       MainActivity.usuarioActual=null;
+       Intent i =new Intent(this, MainActivity.class);
+        this.finish();
 
     }
 
     public void ClicCerrarSesion(View view) {
-        Intent i=new Intent(this, MainActivity.class);
+        Intent i=new Intent(this, LoginActivity.class);
 
         startActivity(i);
     }

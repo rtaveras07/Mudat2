@@ -67,13 +67,15 @@ public class AnuncioListAdapter extends BaseAdapter {
 
         TextView tituloview=view.findViewById(R.id.luTitulo);
         TextView detalleview=view.findViewById(R.id.luDetalle);
-        TextView direccion=view.findViewById(R.id.txtDireccion);
+       // TextView direccion=view.findViewById(R.id.txtDireccion);
         TextView precio=view.findViewById(R.id.txtPrecio);
+        TextView estado=view.findViewById(R.id.txtEstado);
 
         tituloview.setText(getItemTitulo(i));
         detalleview.setText(getItemDetalle(i));
-        direccion.setText(getItemUbicacion(i));
+       // direccion.setText(getItemUbicacion(i));
         precio.setText(getItemPrecio(i).toString());
+        estado.setText(getItemUbicacion(i));
 
         return view;
     }

@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="lanzar"
-            android:text="Usuario"
+            android:text="Usuarios"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
 
@@ -37,7 +37,7 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Anuncio"
+            android:text="Mis Anuncios"
             android:onClick="consultaAnuncio"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="104dp" />
@@ -45,10 +45,12 @@
             android:id="@+id/Salir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salir"
+            android:text="Cerrar Sesión"
 
             android:onClick="bntSalir"
            />
+
+
 
 
     </LinearLayout>
